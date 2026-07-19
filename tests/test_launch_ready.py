@@ -22,6 +22,28 @@ from glyph.source.markdown_ast import parse_markdown
 runner = CliRunner()
 
 
+def test_public_contribution_templates_are_present_and_route_security_privately():
+    issue_template_root = Path(".github/ISSUE_TEMPLATE")
+    expected_forms = {
+        "extraction-bug.yml",
+        "preserved-directive.yml",
+        "adapter-request.yml",
+        "custom-policy.yml",
+    }
+
+    assert expected_forms <= {path.name for path in issue_template_root.glob("*.yml")}
+    config = (issue_template_root / "config.yml").read_text(encoding="utf-8")
+    assert "blank_issues_enabled: false" in config
+    assert "SECURITY.md" in config
+    assert "do not include secrets" in config
+
+    pull_request_template = Path(".github/pull_request_template.md").read_text(encoding="utf-8")
+    assert "Semantic boundary" in pull_request_template
+    assert "positive, negative, and ambiguity coverage" in pull_request_template
+    assert "third-party source text" in pull_request_template
+    assert "SECURITY.md" in pull_request_template
+
+
 def test_release_smoke_uses_a_fresh_wheel_environment():
     script = Path("scripts/release-smoke.sh").read_text(encoding="utf-8")
 

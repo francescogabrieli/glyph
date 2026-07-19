@@ -1,0 +1,74 @@
+name: Extraction bug
+description: Report an incorrect, missing, or unsafe deterministic extraction result.
+title: "[Extraction]: "
+labels:
+  - "area: extraction"
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use only minimal synthetic input. Do not paste proprietary instructions, credentials, customer data, or third-party source text.
+  - type: input
+    id: version
+    attributes:
+      label: Glyph version
+      description: Run `glyph version` and provide the version number.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Source adapter
+      options:
+        - AGENTS.md
+        - CLAUDE.md
+        - Copilot instructions
+        - Cursor rules
+        - README.md
+        - CONTRIBUTING.md
+        - Generic Markdown
+        - Unknown or auto-detected
+    validations:
+      required: true
+  - type: textarea
+    id: synthetic_input
+    attributes:
+      label: Minimal synthetic input
+      description: Provide the smallest invented example that reproduces the issue.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and relevant output
+      description: Include the exact local command and the smallest relevant output excerpt.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected deterministic result
+      description: Describe the expected canonical rule, structured policy, preservation, or classification.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety and reproduction checklist
+      options:
+        - label: The example is synthetic and contains no confidential or third-party source text.
+          required: true
+        - label: I checked `glyph inspect INPUT --show-unmapped` before filing.
+          required: true
+        - label: The expected interpretation has one unambiguous deterministic decomposition.
+          required: true

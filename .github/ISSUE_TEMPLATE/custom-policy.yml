@@ -1,0 +1,67 @@
+name: Custom policy question or bug
+description: Ask about an exact repository-local 0.2 policy or report incorrect custom-policy behavior.
+title: "[Custom policy]: "
+labels:
+  - "area: custom policy"
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Exact custom policies are repository-local interpretations. Redact names and use synthetic terms before submitting configuration.
+  - type: input
+    id: version
+    attributes:
+      label: Glyph version
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Configuration question
+        - Parser or validation error
+        - Unexpected precedence
+        - Compile or render behavior
+        - Documentation gap
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Synthetic source directive
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: policy
+    attributes:
+      label: Sanitized custom-policy configuration
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and relevant output
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected semantics
+      description: State the intended category, expression, scope, conditions, exceptions, and linkage.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: The source and configuration are synthetic and contain no confidential identifiers.
+          required: true
+        - label: I read the custom-rules documentation and confirmed that a canonical custom rule is insufficient.
+          required: true

@@ -1,0 +1,55 @@
+name: Adapter request
+description: Propose deterministic support for another instruction-file convention.
+title: "[Adapter]: "
+labels:
+  - "area: adapters"
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adapter requests must describe a public file convention without copying source material from a third-party repository.
+  - type: input
+    id: convention
+    attributes:
+      label: File convention
+      description: Name the format or path convention.
+      placeholder: "Example: .tool/instructions.md"
+    validations:
+      required: true
+  - type: input
+    id: documentation
+    attributes:
+      label: Public documentation
+      description: Link to the authoritative public format documentation, if one exists.
+      placeholder: https://example.com/docs/instructions
+  - type: textarea
+    id: detection
+    attributes:
+      label: Deterministic detection rule
+      description: Describe paths, filenames, or explicit configuration that identify the adapter.
+    validations:
+      required: true
+  - type: textarea
+    id: semantics
+    attributes:
+      label: Expected semantic behavior
+      description: Explain how headings, commands, operational prose, examples, and non-operational content should be treated.
+    validations:
+      required: true
+  - type: textarea
+    id: synthetic_example
+    attributes:
+      label: Minimal synthetic example
+      render: markdown
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: The example is invented and contains no third-party repository text or identity.
+          required: true
+        - label: The proposal requires no network or LLM dependency in Glyph.
+          required: true

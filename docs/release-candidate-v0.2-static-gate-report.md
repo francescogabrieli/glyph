@@ -62,7 +62,9 @@ reported rather than clamped.
 ## Release boundary
 
 This closes the static expressiveness and classification blocker, including a
-fresh-wheel smoke run. Publication still requires the normal human release
-decision and final artifact/diff review; tagging and publication were not run.
+fresh-wheel smoke run. At the time this static-gate report was generated,
+tagging and publication had not yet been performed. Glyph 0.2.0 was
+subsequently tagged and released.
+
 The separately governed external behavior matrix remains outside this
 milestone and was not run.

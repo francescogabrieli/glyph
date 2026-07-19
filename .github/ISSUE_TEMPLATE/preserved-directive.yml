@@ -1,0 +1,71 @@
+name: Preserved directive review
+description: Report a directive that remains preserved and may have one safe deterministic interpretation.
+title: "[Preserve]: "
+labels:
+  - "area: preservation"
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preservation is a safety fallback, not necessarily a bug. Submit only sanitized synthetic wording with one proposed interpretation.
+  - type: input
+    id: version
+    attributes:
+      label: Glyph version
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Source adapter
+      options:
+        - AGENTS.md
+        - CLAUDE.md
+        - Copilot instructions
+        - Cursor rules
+        - README.md
+        - CONTRIBUTING.md
+        - Generic Markdown
+        - Unknown or auto-detected
+    validations:
+      required: true
+  - type: textarea
+    id: directive
+    attributes:
+      label: Synthetic preserved directive
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: inspect
+    attributes:
+      label: Relevant inspect output
+      description: Include classification, signals, risk, and preservation reason when available.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: interpretation
+    attributes:
+      label: Proposed structured interpretation
+      description: Separate category, subject, predicate, objects, scope, conditions, and exceptions.
+    validations:
+      required: true
+  - type: textarea
+    id: ambiguity
+    attributes:
+      label: Why the interpretation is unambiguous
+      description: Explain which lexical evidence rules out other valid decompositions.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: The wording is synthetic and contains no repository identity or third-party source text.
+          required: true
+        - label: I considered whether a repository-local custom rule is more appropriate.
+          required: true
