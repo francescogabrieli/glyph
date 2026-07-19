@@ -1,0 +1,19 @@
+glyph/0.2
+agent coding
+goal data_pipeline maintain_improve
+stack[airflow,dbt,docker,mypy,pandas,postgres,pytest,python,ruff]
+scope[docs/,migrations/,src/,tests/]
+flow[read,minimal_change,lint,typecheck,test,report]
+cmd.install "pip install -e \".[dev]\""
+cmd.lint "ruff check ."
+cmd.migrate "dbt run"
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,lint_before_done,minimal_change,prefer_existing_patterns,read_before_edit,report_changes,report_data_change_impact,report_verification,run_tests_before_done,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,validate_database_migrations,verify_build_before_done]
+deny[api_key_exposure,avoid_generated_files,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,no_large_refactors,prod_config_write,secrets_commit,unsafe_migrations]
+ask[data_retention_changes,destructive_ops,schema_changes]
+policy[must p_166c135cd03b expression="{\"kind\":\"action\",\"objects\":[\"the_smallest_meaningful_verification_command_for_the_touched_area\"],\"op\":\"atomic\",\"predicate\":\"run\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_4ba07085d33a expression="{\"kind\":\"action\",\"objects\":[\"synthetic_fixtures_for_parser_tests\"],\"op\":\"atomic\",\"predicate\":\"use\",\"subject\":[\"agent\"]}" risk=medium tag=testing]
+policy[must p_4f6220738c8f expression="{\"kind\":\"action\",\"objects\":[\"treating_every_explanatory_paragraph_as_a_rule\"],\"op\":\"atomic\",\"predicate\":\"avoid\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_cff797ece06f expression="{\"kind\":\"action\",\"objects\":[\"partner-feed_normalization\",\"partnerledgernormalizer\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low]
+preserve[must x_bddcc9a95ee6 risk=low -- "They should improve benchmark realism without becoming hidden semantic requirements."]

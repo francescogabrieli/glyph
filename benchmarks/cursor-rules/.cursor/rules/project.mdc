@@ -1,0 +1,72 @@
+---
+description: Cursor rules for the project
+alwaysApply: true
+---
+
+# Cursor Project Rules
+
+Read relevant files before editing. Create a short plan before changing database schema, authentication, or shared components. Keep changes small and reviewable. Prefer simple explicit code. Follow existing repository conventions.
+
+- Before marking work done, run the relevant tests.
+- Run lint before done.
+- Run type checks before done.
+- Do not add unrequested features.
+- Avoid large refactors and broad rewrites.
+- Report what changed and report what was verified.
+- If verification was skipped, explain unrun tests.
+
+Commands:
+
+```bash
+pnpm install
+pnpm dev
+pnpm test
+pnpm lint
+pnpm build
+```
+
+Security:
+
+Never commit secrets, credentials, API keys, tokens, or private keys. Ask for confirmation before destructive operations, schema changes, unsafe migrations, and security-sensitive changes. Do not deploy without approval.
+
+Do not edit generated files manually. Use shared database helpers rather than raw connections.
+
+## Repository notes
+
+Cursor rules often mix direct behavioral instructions with notes about editor behavior, generated files, and project conventions. This project keeps reusable data access helpers in a shared package so services do not open ad hoc database connections. That guidance is repository-specific and useful, but it is not a universal Glyph semantic unit unless a custom rule is supplied.
+
+The benchmark keeps frontmatter, checklist-like rules, command blocks, safety notes, and prose in one file because real `.mdc` files commonly combine those forms. The structural parser should keep line numbers and section context so inspect output is actionable.
+
+## Cursor workflow
+
+Always read relevant files before editing. Create a short plan before non-trivial edits. Make the smallest safe change. Follow existing style, prefer existing patterns, and keep changes small and reviewable.
+
+Use shared database helpers rather than raw connections. Use existing shared helpers before introducing new abstractions. Avoid unrelated packages. Respect package boundaries and ask before touching another workspace.
+
+Run tests before marking work done. Run lint before done, typecheck before done, and verify the build when generated clients, package exports, or runtime configuration change.
+
+```bash
+pytest
+npm test
+ruff check .
+npm run typecheck
+npm run build
+```
+
+Never commit secrets, credentials, tokens, API keys, private keys, or real environment values. Do not touch `.env` files or secret files unless explicitly requested. Ask before destructive operations, unsafe migrations, schema changes, security-sensitive changes, production config writes, or deploys.
+
+Do not edit generated files manually. Avoid changing generated snapshots unless behavior changed. Avoid dependency changes without a clear reason. Do not modify CI without a clear reason. Do not commit debug logs.
+
+Report what changed, report verification, and explain any unrun tests. Update docs when behavior changes and document breaking changes.
+
+## Project context
+
+Cursor rules are short but often dense. They may include repo-specific conventions, generated file warnings, and reminders about command usage. This benchmark includes enough surrounding prose to verify that Glyph extracts operational rules without treating every sentence as mandatory guidance.
+
+Route tenant preference reads through TenantPreferenceStore. That convention is repository-specific and should appear as an unmapped operational candidate until a custom rule is added.
+
+## Additional review rules
+
+Preserve public APIs unless migration work is requested. Document breaking changes and update docs when behavior changes. Preserve accessibility behavior in UI packages. Verify the build when package exports or generated clients change.
+
+Cursor may surface these rules in a compact editor context, so the wording is intentionally direct. Surrounding prose explains why the rules exist, but the operational units are the commands, safety constraints, workflow steps, and reporting expectations.

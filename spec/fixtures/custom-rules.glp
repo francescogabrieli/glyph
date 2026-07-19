@@ -1,0 +1,6 @@
+glyph/0.1
+stack[python,postgres]
+scope[src/,tests/]
+must[route_tenant_reads]
+deny[no_unreviewed_data_exports]
+ask[approval_for_billing_changes]

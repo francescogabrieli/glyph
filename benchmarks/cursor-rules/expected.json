@@ -1,0 +1,33 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "small_reviewable_changes",
+    "simple_explicit_code",
+    "follow_existing_style",
+    "run_tests_before_done",
+    "lint_before_done",
+    "typecheck_before_done",
+    "no_unrequested_features",
+    "no_large_refactors",
+    "report_changes",
+    "report_verification",
+    "explain_unrun_tests",
+    "secrets_commit",
+    "credentials_exposure",
+    "api_key_exposure",
+    "destructive_ops",
+    "schema_changes",
+    "unsafe_migrations",
+    "security_sensitive_changes",
+    "deploy_without_approval"
+  ],
+  "commands": {
+    "install": "pnpm install",
+    "dev": "pnpm dev",
+    "test": "pnpm test",
+    "lint": "pnpm lint",
+    "build": "pnpm build"
+  },
+  "stack": ["node"]
+}

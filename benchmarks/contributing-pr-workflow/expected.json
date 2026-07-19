@@ -1,0 +1,33 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "small_reviewable_changes",
+    "no_large_refactors",
+    "no_unrequested_features",
+    "follow_existing_style",
+    "run_tests_before_done",
+    "lint_before_done",
+    "typecheck_before_done",
+    "report_changes",
+    "report_verification",
+    "secrets_commit",
+    "credentials_exposure",
+    "api_key_exposure",
+    "destructive_ops",
+    "schema_changes",
+    "unsafe_migrations",
+    "security_sensitive_changes",
+    "prod_config_write",
+    "deploy_without_approval",
+    "explain_unrun_tests"
+  ],
+  "commands": {
+    "install": "npm install",
+    "test": "pytest",
+    "lint": "ruff check .",
+    "typecheck": "mypy src",
+    "build": "npm run build"
+  },
+  "stack": ["python", "react", "typescript", "postgres", "docker", "pytest", "ruff", "mypy", "eslint", "playwright", "node"]
+}

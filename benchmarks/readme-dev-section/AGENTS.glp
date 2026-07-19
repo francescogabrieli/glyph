@@ -1,0 +1,17 @@
+glyph/0.2
+goal security
+stack[docker,fastapi,mypy,postgres,pytest,python,ruff]
+scope[src/,tests/]
+flow[read,minimal_change,lint,typecheck,test,build,report]
+cmd.build "docker build ."
+cmd.dev "uvicorn app.main:app --reload"
+cmd.install "pip install -e \".[dev]\""
+cmd.lint "ruff check ."
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,explain_unrun_tests,follow_existing_style,keep_pr_focused,lint_before_done,minimal_change,prefer_existing_patterns,read_before_edit,report_changes,report_verification,run_tests_before_done,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,validate_database_migrations,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_generated_files,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,do_not_edit_lockfiles_unless_needed,do_not_modify_ci_without_reason,no_large_refactors,preserve_public_api,prod_config_write,secrets_commit,unsafe_migrations]
+ask[destructive_ops,schema_changes,security_sensitive_changes]
+policy[must p_53974cd52b12 expression="{\"kind\":\"action\",\"objects\":[\"support-ticket_assignment\",\"supportqueuerouter\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_f41df18e63bd action=check target=that_docker_is_running__postgres_accepts_connections__and_the_editable_python_install_completed condition="local setup fails" risk=low tag=database]
+preserve[must x_8d843da37298 risk=low tag=repository -- "That instruction is specific to this repository and should be reported as unmapped unless a custom rule maps it."]

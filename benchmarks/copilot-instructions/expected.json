@@ -1,0 +1,30 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "small_reviewable_changes",
+    "follow_existing_style",
+    "no_large_refactors",
+    "run_tests_before_done",
+    "lint_before_done",
+    "typecheck_before_done",
+    "report_changes",
+    "report_verification",
+    "explain_unrun_tests",
+    "secrets_commit",
+    "credentials_exposure",
+    "api_key_exposure",
+    "destructive_ops",
+    "security_sensitive_changes",
+    "deploy_without_approval"
+  ],
+  "commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "test": "npm test",
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck",
+    "build": "npm run build"
+  },
+  "stack": ["react", "typescript", "node", "eslint", "playwright"]
+}

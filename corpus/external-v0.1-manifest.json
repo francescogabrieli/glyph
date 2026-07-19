@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "purpose": "Pinned, metadata-only external corpus for the Glyph v0.1.0 release-candidate static sweep. Third-party source files remain outside this repository.",
+  "evaluation": {
+    "supported_adapters": ["agents_md", "claude_md", "copilot_instructions", "cursor_rules", "readme", "contributing", "generic_markdown"],
+    "metrics": ["structured_coverage", "retained_coverage", "safety_retention", "preserved_count", "high_risk_preserved_count", "dropped_count", "canonical_candidate_coverage", "token_reduction"],
+    "gates": {
+      "zero_crashes": true,
+      "zero_non_determinisms": true,
+      "retained_coverage": 100,
+      "safety_retention": 100,
+      "dropped_count": 0,
+      "high_risk_preserved_count": 0,
+      "structured_agent_instruction_coverage": 90,
+      "structured_operational_coverage": 80
+    }
+  },
+  "repositories": [
+    {"name": "promptfoo", "source_url": "https://github.com/promptfoo/promptfoo", "sha": "bafcbf23f77c34aead99f43cf06c65cedc384517", "license": "MIT"},
+    {"name": "cal.com", "source_url": "https://github.com/calcom/cal.com", "sha": "f00434927386c9ecdcbd7e6c5f82d22044a245bc", "license": "MIT"},
+    {"name": "deepagents", "source_url": "https://github.com/langchain-ai/deepagents", "sha": "e9c61304460baab2058a667198600cadef516954", "license": "MIT"},
+    {"name": "paperclip", "source_url": "https://github.com/paperclipai/paperclip", "sha": "e4e12bfb890a0fdf4c7de092362472c50a584533", "license": "MIT"},
+    {"name": "space-agent", "source_url": "https://github.com/agent0ai/space-agent", "sha": "10f4ffdaf50a8136cf8450d17c11286178fd58e6", "license": "MIT"},
+    {"name": "claudian", "source_url": "https://github.com/YishenTu/claudian", "sha": "7d7cc84c60a77431aaccda7ff49a2f1f4ae1c2ab", "license": "MIT"},
+    {"name": "evolution-api", "source_url": "https://github.com/evolution-foundation/evolution-api", "sha": "fa09d37892cdbb1d65a250155d293d92230c5b30", "license": "Apache-2.0 with additional conditions"},
+    {"name": "awesome-copilot", "source_url": "https://github.com/github/awesome-copilot", "sha": "30472ecf0fe34cc561df958c08501ecc5ca80ea4", "license": "MIT"},
+    {"name": "awesome-cursorrules", "source_url": "https://github.com/PatrickJS/awesome-cursorrules", "sha": "b044f956f021b6e8877f16781bcfc466a6a120e9", "license": "CC0-1.0"},
+    {"name": "kubernetes", "source_url": "https://github.com/kubernetes/kubernetes", "sha": "843726939e910e30714ae425d083cd91be4b2437", "license": "Apache-2.0"}
+  ]
+}

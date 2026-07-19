@@ -1,0 +1,32 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "small_reviewable_changes",
+    "simple_explicit_code",
+    "follow_existing_style",
+    "run_tests_before_done",
+    "lint_before_done",
+    "typecheck_before_done",
+    "no_large_refactors",
+    "no_unrequested_features",
+    "secrets_commit",
+    "api_key_exposure",
+    "credentials_exposure",
+    "destructive_ops",
+    "schema_changes",
+    "security_sensitive_changes",
+    "prod_config_write",
+    "deploy_without_approval",
+    "report_changes",
+    "report_verification",
+    "explain_unrun_tests"
+  ],
+  "commands": {
+    "install": "pip install -e \".[dev]\"",
+    "test": "pytest",
+    "lint": "ruff check .",
+    "typecheck": "mypy src"
+  },
+  "stack": ["python", "fastapi", "postgres", "docker", "pytest", "ruff", "mypy"]
+}

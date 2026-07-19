@@ -1,0 +1,16 @@
+rules:
+  - id: route_tenant_reads
+    category: must
+    patterns:
+      - "route tenant reads through tenantresolver"
+    positive_terms:
+      - tenant
+      - tenantresolver
+    section_hints:
+      - tenant
+    modal_hints:
+      - route
+    rendered: "Route tenant reads through TenantResolver."
+    severity: high
+    safety_critical: false
+    always_select: false

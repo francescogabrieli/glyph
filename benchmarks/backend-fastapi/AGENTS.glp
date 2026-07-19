@@ -1,0 +1,21 @@
+glyph/0.2
+agent backend
+goal backend maintain_improve security
+stack[docker,fastapi,mypy,postgres,pytest,python,ruff]
+scope[migrations/,src/,tests/]
+flow[read,plan,minimal_change,lint,typecheck,test,report]
+cmd.dev "uvicorn app.main:app --reload"
+cmd.install "pip install -e \".[dev]\""
+cmd.lint "ruff check ."
+cmd.migrate "alembic upgrade head"
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,explain_unrun_tests,follow_existing_style,keep_pr_focused,lint_before_done,minimal_change,plan_before_edit,prefer_existing_patterns,read_before_edit,report_changes,report_verification,run_tests_before_done,simple_explicit_code,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,validate_database_migrations,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_generated_files,avoid_large_dependency_additions,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,do_not_edit_lockfiles_unless_needed,do_not_modify_ci_without_reason,no_large_refactors,prod_config_write,secrets_commit,unsafe_migrations]
+ask[destructive_ops,schema_changes]
+policy[must p_54e9635de5aa expression="{\"kind\":\"action\",\"objects\":[\"billing-account_reads\",\"the_tenantbillingresolver\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low tag=repository]
+policy[must p_6657f5f787c2 action=run target=migrations_only condition=review risk=high tag=database]
+policy[must p_72bbf0b8351a expression="{\"kind\":\"action\",\"objects\":[\"the_development_server\"],\"op\":\"atomic\",\"predicate\":\"run\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_930651aabc3a expression="{\"op\":\"all\",\"operands\":[{\"kind\":\"action\",\"objects\":[\"reviewable\"],\"op\":\"atomic\",\"predicate\":\"keep\",\"subject\":[\"agent\"]},{\"kind\":\"action\",\"objects\":[\"migrations_linear\"],\"op\":\"atomic\",\"predicate\":\"keep\",\"subject\":[\"agent\"]}]}" risk=high tag=database]
+preserve[must x_608035a9ce93 risk=low tag=repository -- "The resolver rule is specific to this benchmark repository and should remain visible to inspect if it is not registered as a core semantic unit."]
+preserve[must x_e57234999fbf risk=medium tag=repository tag=testing -- "Services own business decisions, repositories own persistence details, and tests should verify behavior near the boundary being changed."]

@@ -1,0 +1,5 @@
+glyph/0.1
+flow[read,test,report]
+cmd.lint "ruff check ."
+cmd.test "pytest"
+must[lint_before_done,report_verification,run_tests_before_done]

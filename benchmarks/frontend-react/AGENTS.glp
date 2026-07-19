@@ -1,0 +1,17 @@
+glyph/0.2
+agent frontend
+goal frontend security
+stack[eslint,node,playwright,react,typescript]
+scope[frontend/,src/,tests/]
+flow[read,plan,lint,typecheck,test,build,report]
+cmd.build "npm run build"
+cmd.dev "npm run dev"
+cmd.install "npm install"
+cmd.lint "npm run lint"
+cmd.test "npm test"
+cmd.typecheck "npm run typecheck"
+must[document_breaking_changes,explain_unrun_tests,follow_existing_style,lint_before_done,plan_before_edit,prefer_existing_patterns,preserve_accessibility,read_before_edit,report_changes,report_verification,run_tests_before_done,simple_explicit_code,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,verify_build_before_done]
+deny[api_key_exposure,avoid_generated_files,avoid_large_dependency_additions,do_not_edit_lockfiles_unless_needed,do_not_modify_ci_without_reason,no_large_refactors,no_unrequested_features,secrets_commit]
+ask[destructive_ops,security_sensitive_changes]
+policy[must p_a0d3443f802a expression="{\"kind\":\"action\",\"objects\":[\"the_checkouteligibilitypresenter_for_checkout_readiness_messages\"],\"op\":\"atomic\",\"predicate\":\"use\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_adb64add798d expression="{\"kind\":\"action\",\"objects\":[\"general_product_explanation\"],\"op\":\"atomic\",\"predicate\":\"ignore\",\"subject\":[\"agent\"]}" risk=low]

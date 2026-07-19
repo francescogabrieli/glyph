@@ -1,0 +1,13 @@
+glyph/0.1
+agent fullstack
+goal maintain_improve react_frontend fastapi_backend
+stack[typescript,react,python,fastapi,postgres,pytest]
+scope[src/frontend/,src/backend/,tests/]
+flow[read,plan,minimal_change,lint,typecheck,test,report]
+cmd.dev "npm run start"
+cmd.lint "npm test -- --runInBand"
+cmd.test "pytest"
+cmd.typecheck "uv run mypy src"
+must[follow_existing_style,plan_before_edit,read_before_edit,report_changes,report_verification,run_tests_before_done]
+deny[no_large_refactors,no_unrequested_features,secrets_commit]
+ask[destructive_ops,schema_changes]

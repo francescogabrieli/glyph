@@ -1,0 +1,14 @@
+glyph/0.2
+goal backend frontend maintain_improve security
+stack[docker,eslint,mypy,node,playwright,postgres,pytest,python,react,ruff,typescript]
+flow[read,plan,lint,typecheck,test,build,report]
+cmd.build "npm run build"
+cmd.install "npm install"
+cmd.lint "ruff check ."
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,follow_existing_style,keep_pr_focused,lint_before_done,plan_before_edit,prefer_existing_patterns,read_before_edit,report_changes,report_verification,run_tests_before_done,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_generated_files,avoid_large_dependency_additions,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,do_not_edit_lockfiles_unless_needed,do_not_modify_ci_without_reason,no_large_refactors,no_unrequested_features,prod_config_write,secrets_commit,unsafe_migrations]
+ask[destructive_ops,schema_changes,security_sensitive_changes]
+policy[must p_f3941b02d764 expression="{\"kind\":\"action\",\"objects\":[\"releasenoteclassifier_for_user-visible_release_notes\"],\"op\":\"atomic\",\"predicate\":\"use\",\"subject\":[\"agent\"]}" risk=medium tag=deployment]
+preserve[must x_b78bf955c8cf risk=low tag=repository -- "That classifier is repository-specific and should remain unmapped unless the repository adds a custom semantic rule."]

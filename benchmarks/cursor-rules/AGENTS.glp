@@ -1,0 +1,15 @@
+glyph/0.1
+agent security
+goal security
+stack[node,pytest,ruff]
+flow[read,plan,minimal_change,lint,typecheck,test,build,report]
+cmd.build "pnpm build"
+cmd.dev "pnpm dev"
+cmd.install "pnpm install"
+cmd.lint "pnpm lint"
+cmd.test "pnpm test"
+cmd.typecheck "npm run typecheck"
+must[document_breaking_changes,explain_unrun_tests,follow_existing_style,lint_before_done,minimal_change,plan_before_edit,prefer_existing_patterns,preserve_accessibility,read_before_edit,report_changes,report_verification,run_tests_before_done,simple_explicit_code,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_generated_files,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,do_not_modify_ci_without_reason,no_large_refactors,no_unrequested_features,preserve_public_api,prod_config_write,secrets_commit,unsafe_migrations]
+ask[destructive_ops,respect_package_boundaries,schema_changes,security_sensitive_changes]
+preserve[must x_a486e867bb23 risk=low -- "ask before touching another workspace."]

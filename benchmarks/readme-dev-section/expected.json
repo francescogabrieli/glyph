@@ -1,0 +1,28 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "minimal_change",
+    "small_reviewable_changes",
+    "follow_existing_style",
+    "run_tests_before_done",
+    "lint_before_done",
+    "typecheck_before_done",
+    "secrets_commit",
+    "api_key_exposure",
+    "credentials_exposure",
+    "schema_changes",
+    "destructive_ops",
+    "unsafe_migrations",
+    "prod_config_write",
+    "deploy_without_approval"
+  ],
+  "commands": {
+    "install": "pip install -e \".[dev]\"",
+    "dev": "uvicorn app.main:app --reload",
+    "test": "pytest",
+    "lint": "ruff check .",
+    "typecheck": "mypy src"
+  },
+  "stack": ["python", "fastapi", "postgres", "docker", "pytest", "ruff", "mypy"]
+}

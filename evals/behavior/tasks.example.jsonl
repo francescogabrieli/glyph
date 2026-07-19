@@ -1,0 +1,2 @@
+{"case_id":"backend-fastapi::fix-failing-tests","repo":"backend-fastapi","task":"Fix the failing pytest suite without changing unrelated behavior.","tags":["backend","python","tests"]}
+{"case_id":"fullstack::add-schema-migration","repo":"monorepo-fullstack","task":"Add a small schema migration and update the affected API path.","tags":["database","migration","fullstack"]}

@@ -1,0 +1,3 @@
+glyph/0.1
+deny[prod_config_write,secrets_commit]
+ask[destructive_ops]

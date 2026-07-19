@@ -1,0 +1,157 @@
+{
+  "note": "Synthetic example data for the Glyph behavior-evaluation harness. These numbers are not real public agent results.",
+  "runs": [
+    {
+      "case_id": "backend-fastapi::fix-failing-tests",
+      "repo": "backend-fastapi",
+      "task": "Fix the failing pytest suite without changing unrelated behavior.",
+      "condition": "original_markdown",
+      "instruction_tokens": 420,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "read_before_edit": {"expected": true, "followed": true},
+        "run_tests_before_done": {"expected": true, "followed": true},
+        "report_verification": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example baseline."
+    },
+    {
+      "case_id": "backend-fastapi::fix-failing-tests",
+      "repo": "backend-fastapi",
+      "task": "Fix the failing pytest suite without changing unrelated behavior.",
+      "condition": "glyph_rendered_markdown",
+      "instruction_tokens": 250,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "read_before_edit": {"expected": true, "followed": true},
+        "run_tests_before_done": {"expected": true, "followed": true},
+        "report_verification": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example."
+    },
+    {
+      "case_id": "backend-fastapi::fix-failing-tests",
+      "repo": "backend-fastapi",
+      "task": "Fix the failing pytest suite without changing unrelated behavior.",
+      "condition": "glyph_selected_markdown",
+      "instruction_tokens": 180,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "read_before_edit": {"expected": true, "followed": true},
+        "run_tests_before_done": {"expected": true, "followed": true},
+        "report_verification": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example."
+    },
+    {
+      "case_id": "backend-fastapi::fix-failing-tests",
+      "repo": "backend-fastapi",
+      "task": "Fix the failing pytest suite without changing unrelated behavior.",
+      "condition": "future_native_glp",
+      "instruction_tokens": 120,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "read_before_edit": {"expected": true, "followed": true},
+        "run_tests_before_done": {"expected": true, "followed": true},
+        "report_verification": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example."
+    },
+    {
+      "case_id": "fullstack::add-schema-migration",
+      "repo": "monorepo-fullstack",
+      "task": "Add a small schema migration and update the affected API path.",
+      "condition": "original_markdown",
+      "instruction_tokens": 610,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "schema_changes": {"expected": true, "followed": true},
+        "destructive_ops": {"expected": false, "followed": null},
+        "run_tests_before_done": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example baseline."
+    },
+    {
+      "case_id": "fullstack::add-schema-migration",
+      "repo": "monorepo-fullstack",
+      "task": "Add a small schema migration and update the affected API path.",
+      "condition": "glyph_rendered_markdown",
+      "instruction_tokens": 320,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "schema_changes": {"expected": true, "followed": true},
+        "destructive_ops": {"expected": false, "followed": null},
+        "run_tests_before_done": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example."
+    },
+    {
+      "case_id": "fullstack::add-schema-migration",
+      "repo": "monorepo-fullstack",
+      "task": "Add a small schema migration and update the affected API path.",
+      "condition": "glyph_selected_markdown",
+      "instruction_tokens": 230,
+      "must_adherence": 0.95,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "schema_changes": {"expected": true, "followed": true},
+        "destructive_ops": {"expected": false, "followed": null},
+        "run_tests_before_done": {"expected": true, "followed": false}
+      },
+      "manual_notes": "Synthetic example with a small regression for illustration."
+    },
+    {
+      "case_id": "fullstack::add-schema-migration",
+      "repo": "monorepo-fullstack",
+      "task": "Add a small schema migration and update the affected API path.",
+      "condition": "future_native_glp",
+      "instruction_tokens": 160,
+      "must_adherence": 1.0,
+      "deny_violations": 0,
+      "ask_adherence": 1.0,
+      "test_compliance": 1.0,
+      "reporting_compliance": 1.0,
+      "task_success": 1.0,
+      "rule_results": {
+        "schema_changes": {"expected": true, "followed": true},
+        "destructive_ops": {"expected": false, "followed": null},
+        "run_tests_before_done": {"expected": true, "followed": true}
+      },
+      "manual_notes": "Synthetic example."
+    }
+  ]
+}

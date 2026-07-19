@@ -1,0 +1,7 @@
+glyph/0.1
+agent coding
+stack[pytest]
+flow[test]
+cmd.test "pytest"
+must[route_tenant_reads,run_tests_before_done]
+deny[credentials_exposure,secrets_commit]

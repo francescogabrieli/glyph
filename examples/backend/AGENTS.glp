@@ -1,0 +1,9 @@
+glyph/0.1
+agent backend
+goal backend
+stack[fastapi,pytest]
+flow[read,test,report]
+cmd.test "pytest"
+must[read_before_edit,report_changes,report_verification,run_tests_before_done]
+deny[api_key_exposure,credentials_exposure,prod_config_write,secrets_commit]
+ask[destructive_ops]

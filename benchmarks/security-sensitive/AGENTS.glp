@@ -1,0 +1,14 @@
+glyph/0.2
+agent security
+goal security
+stack[docker,fastapi,mypy,postgres,pytest,python,ruff]
+flow[read,plan,lint,typecheck,test,build,report]
+cmd.build "docker build ."
+cmd.install "pip install -e \".[dev]\""
+cmd.lint "ruff check ."
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,explain_unrun_tests,lint_before_done,plan_before_edit,read_before_edit,report_audit_event_fields,report_changes,report_security_impact,report_verification,run_tests_before_done,simple_explicit_code,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_large_dependency_additions,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,no_large_refactors,preserve_public_api,prod_config_write,secrets_commit,unsafe_migrations]
+ask[data_retention_changes,destructive_ops,schema_changes,security_sensitive_changes]
+policy[must p_b14485bed584 expression="{\"kind\":\"action\",\"objects\":[\"emergency-access_decisions\",\"breakglasspolicyevaluator\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low]

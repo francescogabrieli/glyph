@@ -1,0 +1,98 @@
+[
+  {
+    "name": "testing_language",
+    "source": "## Pull Requests\nBefore opening a PR, make sure the suite is green. `pytest`",
+    "semantic_units": ["run_tests_before_done"],
+    "commands": {"test": "pytest"},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "security_policy_language",
+    "source": "## Security\nNever include credentials, API keys, or tokens in code, tests, logs, fixtures, or examples.",
+    "semantic_units": ["secrets_commit", "credentials_exposure", "api_key_exposure"],
+    "commands": {},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "contributing_pr_workflow",
+    "source": "## Contributing\nKeep the PR focused and avoid broad rewrites. Report what changed.",
+    "semantic_units": ["small_reviewable_changes", "no_large_refactors", "report_changes"],
+    "commands": {},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "messy_readme_language",
+    "source": "# Project\nThis project is useful.\n\nDevelopment notes: use the shared helpers and update docs when behavior changes. Run `npm test` before merging.",
+    "semantic_units": ["use_existing_helpers", "update_docs_when_behavior_changes", "run_tests_before_done"],
+    "commands": {"test": "npm test"},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "conflicting_rules",
+    "source": "## Testing\nAlways run tests before saying done. Do not run tests unless explicitly asked.",
+    "semantic_units": ["run_tests_before_done"],
+    "commands": {},
+    "unmapped_contains": ["Do not run tests unless explicitly asked."],
+    "conflicts": ["testing_required_and_skipped"]
+  },
+  {
+    "name": "unmapped_repository_specific_rule",
+    "source": "## Database\nUse the shared tenant resolver instead of querying tenants manually.",
+    "semantic_units": [],
+    "commands": {},
+    "unmapped_contains": ["Use the shared tenant resolver instead of querying tenants manually."],
+    "conflicts": []
+  },
+  {
+    "name": "command_table",
+    "source": "## Commands\n\n| label | command |\n| --- | --- |\n| tests | `pytest` |\n| lint | `ruff check .` |",
+    "semantic_units": ["run_tests_before_done", "lint_before_done"],
+    "commands": {"test": "pytest", "lint": "ruff check ."},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "inline_commands",
+    "source": "## Setup\nInstall with `pip install -e .` and run tests with `pytest`.",
+    "semantic_units": ["run_tests_before_done"],
+    "commands": {"install": "pip install -e .", "test": "pytest"},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "generated_files",
+    "source": "## Generated Files\nDo not edit generated files manually.",
+    "semantic_units": ["avoid_generated_files"],
+    "commands": {},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "database_migrations",
+    "source": "## Database\nValidate database migrations before completion. Ask before schema changes. `alembic upgrade head`",
+    "semantic_units": ["validate_database_migrations", "schema_changes"],
+    "commands": {"migrate": "alembic upgrade head"},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "package_boundaries",
+    "source": "## Monorepo\nRespect package boundaries and avoid unrelated packages.",
+    "semantic_units": ["respect_package_boundaries", "avoid_unrelated_packages"],
+    "commands": {},
+    "unmapped_contains": [],
+    "conflicts": []
+  },
+  {
+    "name": "docs_behavior",
+    "source": "## Documentation\nUpdate docs when behavior changes.",
+    "semantic_units": ["update_docs_when_behavior_changes"],
+    "commands": {},
+    "unmapped_contains": [],
+    "conflicts": []
+  }
+]

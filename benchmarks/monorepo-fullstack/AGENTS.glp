@@ -1,0 +1,19 @@
+glyph/0.2
+agent security
+goal backend frontend maintain_improve security
+stack[docker,eslint,fastapi,mypy,node,playwright,postgres,pytest,python,react,ruff,typescript]
+scope[backend/,docs/,frontend/,infra/,migrations/,src/,tests/]
+flow[read,plan,minimal_change,lint,typecheck,test,build,report]
+cmd.build "npm run build"
+cmd.dev "npm run dev"
+cmd.install "npm install"
+cmd.lint "ruff check ."
+cmd.test "pytest"
+cmd.typecheck "mypy src"
+must[document_breaking_changes,explain_unrun_tests,follow_existing_style,keep_pr_focused,lint_before_done,minimal_change,plan_before_edit,prefer_existing_patterns,preserve_accessibility,preserve_service_boundaries,read_before_edit,report_changes,report_verification,run_tests_before_done,small_reviewable_changes,typecheck_before_done,update_docs_when_behavior_changes,use_existing_helpers,validate_database_migrations,verify_build_before_done]
+deny[api_key_exposure,avoid_dependency_changes_without_reason,avoid_generated_files,avoid_large_dependency_additions,avoid_raw_database_connections,avoid_touching_secrets_or_env_files,avoid_unrelated_packages,credentials_exposure,deploy_without_approval,do_not_commit_debug_logs,do_not_edit_lockfiles_unless_needed,do_not_modify_ci_without_reason,no_large_refactors,no_unrequested_features,preserve_public_api,prod_config_write,secrets_commit,unsafe_migrations]
+ask[destructive_ops,respect_package_boundaries,schema_changes,security_sensitive_changes]
+policy[must p_271ef988a339 action=run target=browser-facing_tests condition="a user journey changes, and explain" condition="they cannot be run locally" risk=medium tag=testing]
+policy[must p_aa8380a62dc6 expression="{\"kind\":\"action\",\"objects\":[\"enterprise_entitlement_checks\",\"enterpriseentitlementbridge\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_e6f2c0154bc0 expression="{\"kind\":\"action\",\"objects\":[\"generated_client_publication\",\"clientpublishcoordinator\"],\"op\":\"atomic\",\"predicate\":\"route\",\"subject\":[\"agent\"]}" risk=low]
+policy[must p_f721eebea8af expression="{\"op\":\"any\",\"operands\":[{\"kind\":\"action\",\"objects\":[\"each_pull_request_focused_on_one_product_concern\"],\"op\":\"atomic\",\"predicate\":\"keep\",\"subject\":[\"agent\"]},{\"kind\":\"action\",\"objects\":[\"infrastructure_concern\"],\"op\":\"atomic\",\"predicate\":\"keep\",\"subject\":[\"agent\"]}]}" risk=low]

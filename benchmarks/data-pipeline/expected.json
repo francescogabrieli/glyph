@@ -1,0 +1,31 @@
+{
+  "semantic_units": [
+    "read_before_edit",
+    "plan_before_edit",
+    "minimal_change",
+    "run_tests_before_done",
+    "report_changes",
+    "report_verification",
+    "credentials_exposure",
+    "api_key_exposure",
+    "secrets_commit",
+    "schema_changes",
+    "unsafe_migrations",
+    "destructive_ops",
+    "prod_config_write",
+    "deploy_without_approval",
+    "follow_existing_style",
+    "small_reviewable_changes",
+    "explain_unrun_tests",
+    "lint_before_done",
+    "typecheck_before_done"
+  ],
+  "commands": {
+    "install": "pip install -e \".[dev]\"",
+    "test": "pytest",
+    "lint": "ruff check .",
+    "typecheck": "mypy src",
+    "migrate": "dbt run"
+  },
+  "stack": ["python", "pandas", "airflow", "dbt", "postgres", "docker", "pytest", "ruff", "mypy"]
+}
