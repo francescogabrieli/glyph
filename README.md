@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <code>GLP 0.1 · 0.2</code>
-  <code>Local · Deterministic</code>
+  <img src="https://img.shields.io/badge/GLP-0.1%20%7C%200.2-6F42C1.svg" alt="GLP 0.1 and 0.2">
+  <img src="https://img.shields.io/badge/execution-local%20%7C%20deterministic-2E7D32.svg" alt="Local and deterministic execution">
   <img src="https://img.shields.io/badge/python-3.10%2B-3776AB.svg" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license">
 </p>
