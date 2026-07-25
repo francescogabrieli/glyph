@@ -36,6 +36,21 @@ Markdown files below docs/
 > identical agent response. When a directive is important but ambiguous, Glyph
 > preserves it for review instead of inventing a policy.
 
+<p align="center">
+  <img src="docs/assets/glyph-compilation-flow.svg" alt="Glyph compiles instruction Markdown into a separate deterministic GLP manifest" width="900">
+</p>
+
+## Real, inspectable examples
+
+Review a complete source and compiled artifact before installing or adopting Glyph:
+
+| Example | Before | After | Coverage |
+| --- | --- | --- | --- |
+| [Claude Code service](examples/realistic-claude/README.md) | [`CLAUDE.md`](examples/realistic-claude/CLAUDE.md) | [`CLAUDE.glp`](examples/realistic-claude/CLAUDE.glp) | Python service workflow, safety, verification, and repository-specific guidance |
+| [Full-stack monorepo](examples/realistic-agents/README.md) | [`AGENTS.md`](examples/realistic-agents/AGENTS.md) | [`AGENTS.glp`](examples/realistic-agents/AGENTS.glp) | Python and Node tooling, package boundaries, generated files, migrations, and approvals |
+
+These are maintained realistic fixtures compiled into separate deterministic artifacts. The source files remain untouched. Each example includes commands for `inspect`, `compile`, `diff`, and `verify`, so the committed output can be audited and reproduced. See the [examples index](examples/README.md).
+
 ## Why Glyph
 
 Instruction files tend to combine commands, safety requirements, workflow,
