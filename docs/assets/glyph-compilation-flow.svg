@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-labelledby="title desc">
+  <title id="title">Glyph compilation flow</title>
+  <desc id="desc">Instruction Markdown is inspected and compiled locally into a deterministic GLP manifest, then diffed and verified.</desc>
+  <rect width="960" height="260" rx="18" fill="#f6f8fa"/>
+  <rect x="45" y="70" width="210" height="120" rx="14" fill="#ffffff" stroke="#57606a" stroke-width="2"/>
+  <text x="150" y="112" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" fill="#24292f">AGENTS.md</text>
+  <text x="150" y="143" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" fill="#24292f">CLAUDE.md</text>
+  <text x="150" y="171" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#57606a">source remains untouched</text>
+
+  <path d="M275 130 H355" stroke="#57606a" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="375" y="48" width="210" height="164" rx="14" fill="#ffffff" stroke="#6f42c1" stroke-width="3"/>
+  <text x="480" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="24" fill="#24292f">Glyph</text>
+  <text x="480" y="122" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#57606a">inspect</text>
+  <text x="480" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#57606a">compile</text>
+  <text x="480" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#57606a">diff and verify</text>
+  <text x="480" y="199" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#2e7d32">local and deterministic</text>
+
+  <path d="M605 130 H685" stroke="#57606a" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="705" y="70" width="210" height="120" rx="14" fill="#ffffff" stroke="#57606a" stroke-width="2"/>
+  <text x="810" y="121" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" fill="#24292f">*.glp</text>
+  <text x="810" y="151" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#57606a">compact semantic manifest</text>
+  <text x="810" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#57606a">reviewable artifact</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#57606a"/>
+    </marker>
+  </defs>
+</svg>
