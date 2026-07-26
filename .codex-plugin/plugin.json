@@ -1,0 +1,36 @@
+{
+  "name": "glyph",
+  "version": "0.1.0",
+  "description": "Audit, compile, compare, and verify coding-agent instruction files with the deterministic Glyph toolchain.",
+  "author": {
+    "name": "Francesco Gabrieli",
+    "url": "https://github.com/francescogabrieli"
+  },
+  "homepage": "https://github.com/francescogabrieli/glyph",
+  "repository": "https://github.com/francescogabrieli/glyph",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "instructions",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "semantic-diff",
+    "deterministic",
+    "audit"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Glyph",
+    "shortDescription": "Audit and compile coding-agent instructions",
+    "longDescription": "A trust-first workflow for inspecting, compiling, measuring, comparing, and verifying AGENTS.md, CLAUDE.md, Copilot instructions, Cursor rules, and related instruction Markdown with Glyph.",
+    "developerName": "Francesco Gabrieli",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/francescogabrieli/glyph",
+    "defaultPrompt": "Use Glyph to inspect this repository's coding-agent instruction files, explain unmapped directives, compile to a separate .glp artifact, and verify the result"
+  }
+}

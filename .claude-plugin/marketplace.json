@@ -1,0 +1,21 @@
+{
+  "name": "glyph-marketplace",
+  "owner": {
+    "name": "Francesco Gabrieli"
+  },
+  "metadata": {
+    "description": "Glyph skills for auditing and compiling coding-agent instruction files",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "glyph",
+      "description": "Audit, compile, compare, and verify AGENTS.md, CLAUDE.md, Copilot instructions, Cursor rules, and related instruction Markdown with Glyph.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/glyph"
+      ]
+    }
+  ]
+}
