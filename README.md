@@ -51,6 +51,59 @@ Review a complete source and compiled artifact before installing or adopting Gly
 
 These are maintained realistic fixtures compiled into separate deterministic artifacts. The source files remain untouched. Each example includes commands for `inspect`, `compile`, `diff`, and `verify`, so the committed output can be audited and reproduced. See the [examples index](examples/README.md).
 
+## Use Glyph from Codex or Claude Code
+
+This repository ships a reusable [Glyph agent skill](skills/glyph/SKILL.md). The
+skill teaches coding agents to inspect instruction files before compilation,
+keep the source untouched, explain anything preserved or unmapped, generate a
+separate `.glp` artifact, and verify the result.
+
+The skill orchestrates the local Glyph CLI. It does not add LLM interpretation
+to the compiler, install software silently, or overwrite `AGENTS.md`,
+`CLAUDE.md`, or another instruction source.
+
+Install the Glyph executable first:
+
+```bash
+python -m pip install "glyph-instructions @ git+https://github.com/francescogabrieli/glyph.git@v0.2.0"
+```
+
+### Codex
+
+Install the skill from its GitHub directory with the Codex skill installer:
+
+```text
+$skill-installer install https://github.com/francescogabrieli/glyph/tree/main/skills/glyph
+```
+
+Restart Codex after installation, then ask:
+
+```text
+Use the Glyph skill to inspect AGENTS.md, explain anything unmapped, compile it
+to a separate AGENTS.glp file, and verify the result.
+```
+
+The repository also includes a skill-only Codex plugin manifest at
+[`.codex-plugin/plugin.json`](.codex-plugin/plugin.json).
+
+### Claude Code
+
+Register the repository as a marketplace and install the plugin:
+
+```text
+/plugin marketplace add francescogabrieli/glyph
+/plugin install glyph@glyph-marketplace
+```
+
+Then ask:
+
+```text
+Use the Glyph skill to audit CLAUDE.md before compiling it. Keep the source
+untouched and explain anything preserved or unmapped.
+```
+
+Read the complete [skill installation and usage guide](skills/README.md).
+
 ## Why Glyph
 
 Instruction files tend to combine commands, safety requirements, workflow,
